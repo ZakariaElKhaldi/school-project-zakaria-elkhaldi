@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="welcome.css">
+
+</head>
+<body>
+    <div class="welcome-card">
+        <h2>Welcome</h2>
+        <p>Welcome, <span id="username"></span>! You have successfully logged in.</p>
+        <button onclick="logout()">next</button>
+    </div>
+
+    <script>
+        var username = localStorage.getItem("username");
+        document.getElementById("username").textContent = username;
+
+        function logout() {
+            localStorage.removeItem("username");
+            window.location.href = "home.html"; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Posting System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <div class="header_container">
+            <img src="images\417702739_122114136338211974_1073166113492055720_n-removebg-preview-1.png" alt="" class="Logo">
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html/#about">About</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#">Service 1</a></li>
+                            <li><a href="#">Service 2</a></li>
+                            <li><a href="#">Service 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="container my-4">
+
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="m-0">Add Post</h5>
+            </div>
+
+            <div class="card-body">
+                <form id="postForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <textarea id="postContent" class="form-control" placeholder="Write your post here..." rows="5" required maxlength="500"></textarea>
+                        <input type="file" id="postImage" class="choosebutton"  accept="image/*">
+                        <!-- class="form-control-file mt-2" -->
+                        <small id="postContentCounter" class="form-text text-muted">0/500 characters</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="sorting">
+            <label for="sort" class="mr-2">Sort by:</label>
+            <select id="sort" class="cmbox">
+                <option value="latest">Latest</option>
+                <option value="rank">Highest Ranking</option>
+            </select>
+        </div>
+
+    <div id="posts"></div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src="index.js"></script>
+</body>

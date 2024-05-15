@@ -1,0 +1,124 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2b2d42; /* Darker background color */
+    color: #f3f3f3; /* Light text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Cards */
+.card {
+    margin-bottom: 20px;
+    background-color: #3d3f54 !important; /* Darker card background color */
+    color: #f3f3f3 !important; /* Light card text color */
+}
+
+.card-header {
+    background-color: #484c63; /* Darker card header background color */
+    color: #f3f3f3; /* Light card header text color */
+}
+
+/* Voting */
+.vote {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Comments */
+.comments {
+    background-color: #474a5f; /* Darker comments background color */
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    color: #f3f3f3; /* Light comments text color */
+}
+
+.comment {
+    border-left: 1px solid rgba(255, 255, 255, 0.544);
+    background-color: #565a70; /* Darker comment background color */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Form Elements */
+.form-control {
+    background-color: #3d3f54; /* Darker textarea background color */
+    color: #f8f9fa; /* Light textarea text color */
+    border-color: #5a5d75; /* Darker textarea border color */
+}
+
+.form-control::placeholder {
+    color: #9a9ea8; /* Lighter placeholder text color */
+}
+
+/* Images */
+.post-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Styling */
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Additional Styling */
+.choosebutton {
+    padding-top: 10px;
+}
+
+.cmbox {
+    background-color: #3d3f54; /* Darker textarea background color */
+    color: #f8f9fa; /* Light textarea text color */
+}
+
+.add-comment-link {
+    color: #4d8cff; /* Lighter accent color */
+}
+
+.Logo {
+    width: 100px;
+}
