@@ -190,7 +190,7 @@
 let posts = [
     {
         content: "This is a sample post to get you started.",
-        image: "https://via.placeholder.com/150", // Placeholder image URL
+        image: "https://via.placeholder.com/150",
         votes: 5,
         comments: [
             {
@@ -211,7 +211,6 @@ let posts = [
     }
 ];
 
-// Function to display posts
 function displayPosts() {
     const sortOption = document.getElementById("sort").value;
     if (sortOption === "latest") {
@@ -251,7 +250,6 @@ function displayPosts() {
     });
 }
 
-// Function to render comments
 function renderComments(comments, postIndex, parentCommentIndex = null) {
     return comments.map((comment, index) => `
         <div class="comment">
@@ -271,39 +269,35 @@ function renderComments(comments, postIndex, parentCommentIndex = null) {
     `).join("");
 }
 
-// Function to handle form submission
 function handleSubmit(event) {
     event.preventDefault();
     const postContent = document.getElementById("postContent").value;
-    const postImage = document.getElementById("postImage").files[0]; // Get the uploaded image file
+    const postImage = document.getElementById("postImage").files[0]; 
     if (postContent.trim() !== "") {
         const reader = new FileReader();
         reader.onload = function() {
-            const imageDataURL = reader.result; // Get the base64 representation of the image
+            const imageDataURL = reader.result; 
             const newPost = { content: postContent, image: imageDataURL, votes: 0, comments: [], date: new Date().toISOString() };
             posts.push(newPost);
             displayPosts();
             document.getElementById("postContent").value = "";
             document.getElementById("postContentCounter").textContent = "0/500 characters";
-            document.getElementById("postImage").value = ""; // Clear the input file field
+            document.getElementById("postImage").value = ""; 
         };
-        reader.readAsDataURL(postImage); // Read the image file as a data URL
+        reader.readAsDataURL(postImage); 
     }
 }
 
-// Function to handle upvoting
 function upvote(index) {
     posts[index].votes++;
     displayPosts();
 }
-
-// Function to handle downvoting
+ 
 function downvote(index) {
     posts[index].votes--;
     displayPosts();
 }
 
-// Function to handle adding comments
 function addComment(event, postIndex, parentCommentIndex) {
     event.preventDefault();
     const commentContent = event.target.querySelector("textarea").value;
@@ -322,7 +316,6 @@ function addComment(event, postIndex, parentCommentIndex) {
     }
 }
 
-// Function to show the comment form
 function showCommentForm(element, postIndex, parentCommentIndex = null) {
     const commentForms = document.querySelectorAll(".comment-form");
     commentForms.forEach(form => form.classList.add("d-none"));
@@ -332,20 +325,16 @@ function showCommentForm(element, postIndex, parentCommentIndex = null) {
     currentForm.querySelector("textarea").focus();
 }
 
-// Event listener for form submission
 document.getElementById("postForm").addEventListener("submit", handleSubmit);
 
-// Event listener for sorting option change
 document.getElementById("sort").addEventListener("change", displayPosts);
 
-// Event listener for character counter
 document.getElementById("postContent").addEventListener("input", function() {
     const maxLength = this.getAttribute("maxlength");
     const currentLength = this.value.length;
     document.getElementById("postContentCounter").textContent = `${currentLength}/${maxLength} characters`;
 });
 
-// Event listener for comment character counter
 document.querySelectorAll(".comment-form textarea").forEach(textarea => {
     textarea.addEventListener("input", function() {
         const maxLength = this.getAttribute("maxlength");
@@ -354,6 +343,38 @@ document.querySelectorAll(".comment-form textarea").forEach(textarea => {
     });
 });
 
-// Initial display of posts
 displayPosts();
 
+(function($) { "use strict";
+
+	$(function() {
+		var header = $(".start-style");
+		$(window).scroll(function() {    
+			var scroll = $(window).scrollTop();
+		
+			if (scroll >= 10) {
+				header.removeClass('start-style').addClass("scroll-on");
+			} else {
+				header.removeClass("scroll-on").addClass('start-style');
+			}
+		});
+	});		
+		
+	//Animation
+	
+	$(document).ready(function() {
+		$('body.hero-anime').removeClass('hero-anime');
+	});
+
+	//Menu On Hover
+		
+	$('body').on('mouseenter mouseleave','.nav-item',function(e){
+			if ($(window).width() > 750) {
+				var _d=$(e.target).closest('.nav-item');_d.addClass('show');
+				setTimeout(function(){
+				_d[_d.is(':hover')?'addClass':'removeClass']('show');
+				},1);
+			}
+	});	
+		
+  })(jQuery);

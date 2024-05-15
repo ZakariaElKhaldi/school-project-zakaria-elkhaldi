@@ -101,7 +101,7 @@
 
         .main-text{
             --s: 0.1em;   /* the thickness of the line */
-            --c: #00d60e; /* the color */
+            --c: #8166a8; /* the color */
             color: #00000000;
             padding-bottom: var(--s);
             background: 
